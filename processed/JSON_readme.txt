@@ -44,3 +44,18 @@ perplexity = 30
 TruncatedSVD seed = 1
 SVD dims = 50
 t_SNE seed = 2
+
+p_6:
+stems = 10000
+perplexity = 30
+TruncatedSVD seed = 1
+SVD dims = 784
+t_SNE seed = 1
+
+p_6:
+tf-idf APPLIED
+stems = 10000
+perplexity = 30
+TruncatedSVD seed = 1
+SVD dims = 128
+t_SNE seed = 1

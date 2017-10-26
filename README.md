@@ -8,7 +8,7 @@ In any given field, I probably know so little that I may not even know what ther
 ## Question:
 #### _Can we easily reveal some underlying structure in the relationships between academic paper abstracts using a combination of TruncatedSVD and TSNE?_
 
-## Process:
+## Attempt #1:
 
 ### The Dataset
 

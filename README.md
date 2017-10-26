@@ -10,7 +10,7 @@ In any given field, I probably know so little that I may not even know what ther
 
 ### The Dataset
 
-I originally planned to approach this task by interacting with the [arXiv API](https://arxiv.org/help/api/index), but I then came across the relatively new website called [_Semantic Scholar_](https://semanticscholar.org), which uses AI to analyze publically avaiable research papers and extract "authors, references, figures, and topics" from them. Since my project requires access to large amounts of data, I downloaded its entire ["open research corpus"](http://labs.semanticscholar.org/corpus/), which contains information on over 7 million research papers. The download is a single massive (18 GB) JSON file, so I began by splitting the file up into more manageable pieces, each containing information on only about 100,000 papers.
+I originally planned to approach this task by interacting with the [arXiv API](https://arxiv.org/help/api/index), but I then came across the relatively new website called [Semantic Scholar](https://semanticscholar.org), which uses AI to analyze publically avaiable research papers and extract "authors, references, figures, and topics" from them. Since my project requires access to large amounts of data, I downloaded its entire ["open research corpus"](http://labs.semanticscholar.org/corpus/), which contains information on over 7 million research papers. The download is a single massive (18 GB) JSON file, so I began by splitting the file up into more manageable pieces, each containing information on only about 100,000 papers.
 
 ### Embedding
 
@@ -38,4 +38,4 @@ Again, after modifying the initial embedding and dimensionality reduction, I wil
 
 Rather than creating embeddings based on the text in abstracts, it may also be useful to visualize structure using a graph-based approach where edges between nodes are formed by paper citations. Using the _Semantic Scholar_ resources which automatically identify how influential a source is on the work of the paper citing the source, we could assign edge weights based both on number of citations and importance of each citation. The result might look something like [what Chris Olah did with fanfiction.net](http://colah.github.io/posts/2014-07-FFN-Graphs-Vis/). 
 
-[image]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/images/papers-2017-02-21-70-p_2.png 
+[image]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/Semantic%20Scholar%20Attempt/images/papers-2017-02-21-70-p_2.png 

@@ -58,7 +58,7 @@
             .attr("stroke", "none")
         
         // load data
-        datafile = "papers-2017-02-21-70-p_12"
+        datafile = "embedding_0"
 
         d3.queue()
             .defer(d3.json, "https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/processed/" + datafile + ".json")
@@ -80,6 +80,11 @@
                 [x_min, x_max] = [d3.min(XT[0]), d3.max(XT[0])],
                 [y_min, y_max] = [d3.min(XT[1]), d3.max(XT[1])],
                 [x_c, y_c] = [0.5*(x_max + x_min), 0.5*(y_max + y_min)];
+
+
+            function term2num() {
+                //////??????
+            }
 
             // Color points according to publication date
             var color_scale = d3.scaleLinear()
@@ -105,7 +110,7 @@
                     .append("a")
                         .attr("href", function(d, i){
                             var paper_id = TSNE_data.info[i][0];
-                            return "https://api.semanticscholar.org/" + paper_id;
+                            return paper_id;
                         })
                         .attr("target", "_blank")
                         .attr("transform", `translate(${width/4 - x_c}, ${height/8 - y_c}) scale(${5})`)

@@ -48,7 +48,11 @@ Without a good secondary labeling system, I realized that it was very difficult 
 
 To collect articles from the arXiv API, I kept just the first 5000 results from the search term "the". I assumed that, since "the" is the most commonly used word in the English language, this query should return a reasonably representative sample of the content on the arXiv. Of these 5000, I kept only articles belonging to the population's 10 most frequently appearing research categories (reducing the number of papers to 4583). I also opted to forgoe the randomization procedure I employed in Attempt #1 since I believe that instead of making my analysis more statistically fair, it only added unwanted noise with no benefit. In Attempt #2, I performed the tf-idf weighting and embedding procedure on all 4583 documents so that the abstracts-to-be-embedded formed the document pool from which tf-idf weights were determined (more closely matching standard LSA practice than my first attempt).
 
+### Better Embedding
+
 Most importantly (I think), when I embedded the abstracts in high dimensional space, I did _not_ arbitrarily truncate any of the dimensions. In my first attempt, I kept only the most frequently appearing word stems because I thought that allowing the embedding to of such high dimensionality would be computationally prohibitive. I now realize that doing so is probably what caused the t-SNE algorithm to fail, generating only very weak apparent clustering. The most important similarities between abstracts come from words that are used infrequently, many of which I previously ignored. In this attempt, I kept every word stem, embedding the abstracts in their full 19910-dimensional space.
+
+### Much Better Results
 
 After the embedding, I performed the same Truncated SVD and t-SNE procedures as before (reducing the data dimensionality to 128 and 2 dimensions, respectively). Immediately, even without color cues, the difference between Attempt #2 and Attempt #1 is striking. The clustering here is far more structured, and with color labels, we can see that the structure is indeed representative of the categories which arXiv has the papers grouped under.
 

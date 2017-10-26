@@ -1,3 +1,5 @@
+![image-2]
+
 # Visualizing the Structure of Knowledge
 
 ## Motivation:
@@ -26,7 +28,7 @@ Though the [t-Distributed Stochastic Neighbor Embedding (t-SNE)](https://en.wiki
 
 Thus, mapping from 10,000 to 128 dimensions with Truncated SVD, then from 128 to 2 dimensions with t-SNE, I ended up with something that looks like this blob:
 
-![image]
+![image-0]
 
 I've colored the points according to publication date (redder is older, bluer is newer)—clearly, t-SNE did not separate the data according to date. Without any other means of labeling, it is quite difficult to tell whether t-SNE has managed to successfully extract any structural information from the dataset. If we inspect the content of the points, however, we find that the small lobe separated near the top right consists of abstracts largely written in French (whereas the rest are largely in English). So, the embedding and dimensionality-reduction did preserve _some_ structure, it's just not clear at the moment the extent to which it preserved that structure. Ideally, I would like to redo this analysis with papers which have their field of study labeled (e.g. "physics", "medicine", "mathematics", etc.), so that I can generate a more meaningful color scheme, but such data is not currently available in the _Semantic Scholar_ dataset. Additionally, there are a number of adjustable parameters for each of the algorithms I used, on top of the fact that they are both stochastic (thus generating different results for each run even if the parameters are kept the same). t-SNE is also prone to getting stuck in local minima, so the result I obtained here may not be optimal (even if I happened to choose the perfect parameters). 
 
@@ -38,4 +40,6 @@ Again, after modifying the initial embedding and dimensionality reduction, I wil
 
 Rather than creating embeddings based on the text in abstracts, it may also be useful to visualize structure using a graph-based approach where edges between nodes are formed by paper citations. Using the _Semantic Scholar_ resources which automatically identify how influential a source is on the work of the paper citing the source, we could assign edge weights based both on number of citations and importance of each citation. The result might look something like [what Chris Olah did with fanfiction.net](http://colah.github.io/posts/2014-07-FFN-Graphs-Vis/). 
 
-[image]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/Semantic%20Scholar%20Attempt/images/papers-2017-02-21-70-p_2.png 
+[image-0]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/Semantic%20Scholar%20Attempt/images/papers-2017-02-21-70-p_2.png
+[image-1]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/images/embedding_1a.png
+[image-2]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/images/embedding_1a_labeled.png

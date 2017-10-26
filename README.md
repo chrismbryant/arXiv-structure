@@ -62,6 +62,10 @@ Furthermore, by taking a closer look at the content of some of the better-define
 
 ![image-2]
 
+#### Here is the code I used to retrieve and process my data in Attempt #2:
+* Processing: [arxivstruct_2.ipynb](https://github.com/chrismbryant/arXiv-structure/blob/master/arxivstruct_2.ipynb)
+* Visualization: [arxivstruct_TSNE_from_arXiv.html](https://github.com/chrismbryant/arXiv-structure/blob/master/arxivstruct_TSNE_from_arXiv.html)
+
 [image-0]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/Semantic%20Scholar%20Attempt/images/papers-2017-02-21-70-p_2.png
 [image-1]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/images/embedding_1a.png
 [image-2]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/images/embedding_1a_labeled.png

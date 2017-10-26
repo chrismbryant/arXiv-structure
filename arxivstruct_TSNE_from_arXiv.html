@@ -58,10 +58,10 @@
             .attr("stroke", "none")
         
         // load data
-        datafile = "embedding_0"
+        datafile = "embedding_1";
 
         d3.queue()
-            .defer(d3.json, "https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/processed/" + datafile + ".json")
+            .defer(d3.json, "https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/papers_from_arXiv/processed/" + datafile + ".json")
             .await(ready);
 
         // callback function  
@@ -71,34 +71,26 @@
 
             var TSNE_data = {
                 "X": data.X,
-                "info": data.info
+                "info": data.info,
+                "categories": data.categories
             };
 
             var XT = d3.transpose(TSNE_data.X),
-                iT = d3.transpose(TSNE_data.info),
-                [t_min, t_max] = [d3.min(iT[1]), d3.max(iT[1])],
                 [x_min, x_max] = [d3.min(XT[0]), d3.max(XT[0])],
                 [y_min, y_max] = [d3.min(XT[1]), d3.max(XT[1])],
-                [x_c, y_c] = [0.5*(x_max + x_min), 0.5*(y_max + y_min)];
-
-
-            function term2num() {
-                //////??????
-            }
-
-            // Color points according to publication date
-            var color_scale = d3.scaleLinear()
-                .domain([t_min, t_max])
-                .range(["red", "darkblue"]);
-                // .range([0, 1]); // for use with d3.interpolate
+                [x_c, y_c] = [0.5*(x_max + x_min), 0.5*(y_max + y_min)],
+                category_vals = Object.values(TSNE_data.categories),
+                t_min = d3.min(category_vals),
+                t_max = d3.max(category_vals);
 
             var g = svg.append("g") // Group all the plotted content together
                 .attr("class", "content")
+                // .attr("transform", "scale(0.8)")
 
             // ------------------------------- POINTS ------------------------------- //
                 
                 var point_radius =  0.5 // 1
-                var point_opacity = 0.6 // 0.6
+                var point_opacity = 0.8 // 0.6
 
                 g.append("g")
                     
@@ -126,8 +118,7 @@
                         .attr("r", point_radius)
                         .attr("fill-opacity", point_opacity)
                         .attr("fill", function(d, i){
-                            return color_scale(TSNE_data.info[i][1]);
-                            // return d3.interpolateSpectral(color_scale(TSNE_data.info[i][1]));
+                            return d3.schemeCategory10[TSNE_data.categories[TSNE_data.info[i][1]]];
                         })
 
                     .on("mouseover", function(d) {
@@ -158,7 +149,7 @@
 
             // ----------------------------- EXPORT SVG ----------------------------- //
                 
-                // saveSvgAsPng(document.getElementById(image_title), datafile + ".png", {scale: 2});
+                // saveSvgAsPng(document.getElementById(image_title), datafile + ".png", {scale: 4});
                 
             // ------------------------ ZOOMING CAPABILITIES ------------------------ //
 

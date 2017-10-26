@@ -1,9 +1,9 @@
-![image-2]
+﻿![image-2]
 
 # Visualizing the Structure of Knowledge
 
 ## Motivation:
-In any given field, I probably know so little that I may not even know what there is to know. It would be nice to be able to choose a topic and browse an interactive visualization of all the research being done on and related to that topic such that each research paper was represented by a point in space. Related papers would form clusters, which together would constitute a structure in space visually representing the structure of our knowledge. Reading about a subfield would amount to exploring a cluster. Rather than clicking on a series of links to figure out which related topics are important, I would be able to quickly gauge the popularity and relevance of other topics by the size and proximity of nearby clusters. 
+In any arbitrary field, I probably know so little that I may not even know what there is to know. It would be convenient to be able to browse an interactive visualization of all the research being done on and related to a chosen topic such that each research paper would correspond to a point in space. Related papers would form clusters, which together would constitute a structure in space visually representing the structure of our knowledge. Reading about a subfield would amount to exploring a cluster. Rather than clicking on a series of links to figure out which related topics are important, I would be able to quickly gauge the popularity and relevance of other topics by the size and proximity of nearby clusters. 
 
 ## Question:
 #### _Can we easily reveal some underlying structure in the relationships between academic paper abstracts using a combination of Truncated SVD and t-SNE?_
@@ -62,10 +62,10 @@ Furthermore, by taking a closer look at the content of some of the better-define
 
 ![image-2]
 
-#### Here is the code I used to retrieve and process my data in Attempt #2:
-* Processing: [arxivstruct_2.ipynb](https://github.com/chrismbryant/arXiv-structure/blob/master/arxivstruct_2.ipynb)
-* Visualization: [arxivstruct_TSNE_from_arXiv.html](https://github.com/chrismbryant/arXiv-structure/blob/master/arxivstruct_TSNE_from_arXiv.html)
+#### _Here is the code I used to retrieve and process my data in Attempt #2:_
+* Processing: [arxivstruct_2.ipynb](https://github.com/chrismbryant/arXiv-structure/blob/master/Attempt%202/arxivstruct_2.ipynb)
+* Visualization: [arxivstruct_TSNE_from_arXiv.html](https://github.com/chrismbryant/arXiv-structure/blob/master/Attempt%202/arxivstruct_TSNE_from_arXiv.html)
 
-[image-0]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/Semantic%20Scholar%20Attempt/images/papers-2017-02-21-70-p_2.png
-[image-1]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/images/embedding_1a.png
-[image-2]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/images/embedding_1a_labeled.png
+[image-0]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/Attempt%201/images/papers-2017-02-21-70-p_2.png
+[image-1]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/Attempt%202/images/embedding_1a.png
+[image-2]: https://raw.githubusercontent.com/chrismbryant/arXiv-structure/master/Attempt%202/images/embedding_1a_labeled.png

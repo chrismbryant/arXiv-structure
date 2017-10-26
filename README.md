@@ -42,7 +42,7 @@ Rather than creating embeddings based on the text in abstracts, it may also be u
 
 ## Attempt #2:
 
-### arXiv
+### The arXiv
 
 Without a good secondary labeling system, I realized that it was very difficult to tell whether my first attempt adequately clustered similar abstracts together. To remedy this, I returned to my initial plan of using the arXiv API to retrieve the desired information. In addition to the same title, abstract, and publication date information that Semantic Scholar provides, arXiv also tags each article with the "primary category" to which that article belongs. While this won't help the clustering algorithm work any better (since the category does not factor into the paper abstract embedding), coloring the final points according to research category will allow us to more appropriately judge the clustering of similar articles by the clustering of each color.
 
